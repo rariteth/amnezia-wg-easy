@@ -4,6 +4,6 @@ Download and execute the script. Answer the questions asked by the script and it
 
 ```bash
 curl -sL https://raw.githubusercontent.com/rariteth/amnezia-wg-easy/master/amnezia-install.sh -o install.sh
-chmod +x install.sh
-sudo ./install.sh install
+chmod +x amnezia-install.sh
+sudo ./amnezia-install.sh install
 ```
