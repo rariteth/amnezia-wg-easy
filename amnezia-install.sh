@@ -41,6 +41,7 @@ case "$1" in
           --privileged \
           -e WG_HOST=$WG_HOST \
           -e PASSWORD=$PASSWORD \
+          -e WG_DEFAULT_KEEPALIVE=25 \
           -v "$CONFIG_DIR:/etc/wireguard" \
           -v /lib/modules:/lib/modules:ro \
           -p 51820:51820/udp \
