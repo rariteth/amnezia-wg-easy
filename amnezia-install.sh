@@ -49,6 +49,13 @@ case "$1" in
           ghcr.io/spcfox/amnezia-wg-easy
 
         echo "Установка завершена! Панель: http://$WG_HOST:51821"
+
+        echo "--- Команда для настройки Keenetic ---"
+        sleep 2
+        VALUES=$(grep -E '^(Jc|Jmin|Jmax|S1|S2|H1|H2|H3|H4)' $CONFIG_DIR/wg0.conf | awk '{printf "%s ", $3}')
+        echo "Скопируйте и вставьте это в консоль роутера:"
+        echo "interface Wireguard0 wireguard asc $VALUES"
+        echo "system configuration save"
         ;;
     uninstall)
         podman stop $CONTAINER_NAME && podman rm $CONTAINER_NAME
